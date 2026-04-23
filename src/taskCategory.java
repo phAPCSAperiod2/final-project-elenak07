@@ -1,17 +1,17 @@
 //this class groups tasks into categories for organization
 // schoolwork, sleep, work, hobbies, etc.
 
-//add/remove tasks
+//add and remove tasks
 //get all tasks in category
 //calculate total time for catorgy
 
+import java.util.List;
+
 public class taskCategory {
     //create the 2d array for tasks
+    private String categoryName;
+    private 
 
-    //private String categoryName;
-    private Task[][] taskGrid;  // 2D array for tasks
-
-    //
     public taskCategory(String categoryName) {
         this.categoryName = categoryName;
         this.taskGrid = new Task[2][3];  // Example: 2 rows, 3 columns
@@ -23,21 +23,22 @@ public class taskCategory {
             taskGrid[row][col] = task;
         }
 }
-
+    // add task
     public void addTask(Task task) {
         tasks.add(task);
     }
-
+    // remove task
     public void removeTask(Task task) {
         tasks.remove(task);
     }
-
+    // array list to return tasks
     public List<Task> getTasks() {
         return tasks;
     }
-
+    // calculating total time for category
     public int getTotalTime() {
         int totalTime = 0;
+        // for loop to iterate through tasks
         for (Task task : tasks){
             totalTime+= task.getDuration();
         }

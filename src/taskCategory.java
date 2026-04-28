@@ -5,16 +5,24 @@
 //get all tasks in category
 //calculate total time for catorgy
 
+import java.util.ArrayList;
 import java.util.List;
 
+//create the 2d array for tasks
 public class taskCategory {
-    //create the 2d array for tasks
     private String categoryName;
-    private 
+    private Task[][] taskGrid;
+    private List<Task> tasks; // list to hold tasks in the category
 
     public taskCategory(String categoryName) {
         this.categoryName = categoryName;
         this.taskGrid = new Task[2][3];  // Example: 2 rows, 3 columns
+        this.tasks = new ArrayList<>(); //initialize the task list
+}
+
+public String getCategoryName() {
+    return categoryName;
+
 }
 
     // method to add a task at a specific position

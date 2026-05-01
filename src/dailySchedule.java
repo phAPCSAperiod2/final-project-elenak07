@@ -17,49 +17,49 @@ public class dailySchedule {
     }
     // method to add a task at a specific day and hour
     public void addTaskAt(int day, int hour, Task task) {
-        for (int i = 0; i < schedule.length; i++) {
-            for (int j = 0; j <schedule[i].length; j++) {
-                if (i == day && j == hour) {
-                    schedule[i][j] = task;
-                }
-            }
+        if ( day >= 0 && day < schedule.length &&
+            hour >= 0 && hour < schedule[day].length) {
+                schedule[day][hour] = task;
         }
     }
     // method to remove a task at a specific day and hour
-    public void removeTaskAt(int day, int hour, Task task) {
-        for (int i = 0; i < schedule.length; i++) {
-            for (int j = 0; j < schedule.length; j++) {
-                if (i == day && j == hour) {
-                    schedule [i][j] = null;
-                }
-            }
+    public void removeTaskAt(int day, int hour) {
+        if ( day >= 0 && day < schedule.length &&
+            hour >= 0 && hour < schedule[day].length) {
+                schedule[day][hour] = null;
         }
     }
 
     // method to get a task at a specific day and hour
-    public void getTaskAt(int day, int hour, Task task) {
-        for (int i = 0; i < schedule.length; i++) {
-            for (int j = 0; j < schedule.length; j++) {
-                if (i == day && j == hour) {
-                    task = schedule[i][j];
-                }
-            }
+    public Task getTaskAt(int day, int hour) {
+        if ( day >= 0 && day < schedule.length &&
+            hour >= 0 && hour < schedule[day].length) {
+            return schedule[day][hour];
+        }
+        return null;
+    }
+
+    public void addCategory(String category) {
+        if (!taskCategories.contains(category)) {
+            taskCategories.add(category);
         }
     }
 
-    // method to get total time of tasks for a specific day
-    public void getTotalTime(int day, int hour, Task task) {
-        for (int i = 0; i < schedule.length; i++) {
-            for (int j = 0; j < schedule.length; j++) {
-                if (i == day && j == hour) {
-                    int totalTime = 0;
-                    if (schedule[i][j] != null) {
-                        totalTime += schedule[i][j].getDuration();
-                    }
+    public List<String> getTaskCategories() {
+        return taskCategories;
+    }
+
+    // method to get total time of tasks for the whole schedule
+    public int getTotalTime() {
+        int totalTime = 0;
+        for (int day = 0; day < schedule.length; day++) {
+            for (int hour = 0; hour < schedule[day].length; hour++) {
+                Task task = schedule[day][hour];
+                if (task != null) {
+                    totalTime += task.getDuration();
                 }
             }
         }
+        return totalTime;
     }
-
-    
-    }
+}

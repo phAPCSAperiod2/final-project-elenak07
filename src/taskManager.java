@@ -40,4 +40,17 @@ public class taskManager {
     public int getTotalTime() {
         return schedule.getTotalTime();
     }
+    public void displaySchedule() {
+        String[] days = {"Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"};
+        for (int day = 0; day < 7; day++) {
+            System.out.println(days[day] + ":");
+            for (int hour = 0; hour < 24; hour++) {
+                Task task = schedule.getTaskAt(day, hour);
+                if (task != null) {
+                    System.out.println("  " + hour + ":00 - " + task.getName() + " (" + task.getDuration() + " min, " + task.getCategory() + ")");
+                }
+            }
+            System.out.println();
+        }
+    }
 }

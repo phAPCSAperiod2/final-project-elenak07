@@ -9,7 +9,7 @@ public class Task {
     private String category; //work, school, personal, etc
     private boolean isCompleted;
 
-    //constructor
+    //constructor for task attributes
     public Task (String name, int duration, int importance, String category, boolean isCompleted) {
         this.name = name;
         this.duration = duration;

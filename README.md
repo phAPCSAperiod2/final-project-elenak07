@@ -181,6 +181,10 @@ All planning, work logs, testing notes, and reflections live in **your project j
 
 If it happened during this project, it should be documented there.
 
+- Copilot helped with assigning user’s busy hours like work, school, and sleep
+- Helped with user interaction: menu, loops for busy and free hours
+
+
 ---
 
 ## ✅ Final Submission Expectations
@@ -215,6 +219,9 @@ lifestyle. They have classes, homework, hobbies, work, etc.
 
 ## 🔹 How to Run the Program
 Clear steps so someone else can run your project.
+- Press the run button
+- Press App.java if it asks which class to run
+- Read menu and follow along with options it gives
 
 ## 🔹 Technical Overview
 Brief description of:

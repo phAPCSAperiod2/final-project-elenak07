@@ -12,9 +12,11 @@ public class dailySchedule {
     private boolean[][] available;
 
     public dailySchedule() {
+        // initialize the schedule with null tasks and all time slots available
         this.schedule = new Task[7][24]; // 7 days, 24 hours
         this.taskCategories = new ArrayList<>();
         this.available = new boolean[7][24];
+        // set all time slots as available
         for (int i = 0; i < 7; i++) {
             for (int j = 0; j < 24; j++) {
                 available[i][j] = true;
@@ -44,13 +46,13 @@ public class dailySchedule {
         }
         return null;
     }
-
+    // method to set unavailable time slots for a specific day
     public void setUnavailable(int day, int startHour, int endHour) {
         for (int h = startHour; h < endHour && h < 24; h++) {
             available[day][h] = false;
         }
     }
-
+    // method to check if a specific time slot is available
     public boolean isAvailable(int day, int hour) {
         return available[day][hour];
     }

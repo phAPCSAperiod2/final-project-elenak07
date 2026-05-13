@@ -14,6 +14,7 @@ public class taskCategory {
     private Task[][] taskGrid;
     private List<Task> tasks; // list to hold tasks in the category
 
+    //constructor for category name and initializing the task grid and task list
     public taskCategory(String categoryName) {
         this.categoryName = categoryName;
         this.taskGrid = new Task[2][3];  // Example: 2 rows, 3 columns

@@ -15,7 +15,7 @@ public class Task {
         this.duration = duration;
         this.importance = importance;
         this.category = category;
-        this.isCompleted = false;
+        this.isCompleted = isCompleted;
     }
         //getters and setters
         public String getName() {

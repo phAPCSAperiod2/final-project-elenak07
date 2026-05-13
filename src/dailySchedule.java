@@ -9,16 +9,22 @@ import java.util.List;
 public class dailySchedule {
     private Task[][] schedule;
     private List<String> taskCategories;
+    private boolean[][] available;
 
     public dailySchedule() {
         this.schedule = new Task[7][24]; // 7 days, 24 hours
         this.taskCategories = new ArrayList<>();
-
+        this.available = new boolean[7][24];
+        for (int i = 0; i < 7; i++) {
+            for (int j = 0; j < 24; j++) {
+                available[i][j] = true;
+            }
+        }
     }
     // method to add a task at a specific day and hour
     public void addTaskAt(int day, int hour, Task task) {
         if ( day >= 0 && day < schedule.length &&
-            hour >= 0 && hour < schedule[day].length) {
+            hour >= 0 && hour < schedule[day].length && available[day][hour]) {
                 schedule[day][hour] = task;
         }
     }
@@ -39,10 +45,14 @@ public class dailySchedule {
         return null;
     }
 
-    public void addCategory(String category) {
-        if (!taskCategories.contains(category)) {
-            taskCategories.add(category);
+    public void setUnavailable(int day, int startHour, int endHour) {
+        for (int h = startHour; h < endHour && h < 24; h++) {
+            available[day][h] = false;
         }
+    }
+
+    public boolean isAvailable(int day, int hour) {
+        return available[day][hour];
     }
 
     public List<String> getTaskCategories() {

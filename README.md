@@ -100,55 +100,9 @@ Your final project must include:
 - ✅ Clear documentation
 
 ## Class Diagram
-
-```
-+----------------+       +-------------------+
-|      App       |       |    taskManager    |
-+----------------+       +-------------------+
-| - scanner      |       | - schedule        |
-|                |       +-------------------+
-| + main()       |       | + addTask()       |
-+----------------+       | + removeTask()    |
-                         | + assignTask()    |
-                         | + getTask()       |
-                         | + getTotalTime()  |
-                         | + displaySchedule()|
-                         +-------------------+
-                                 |
-                                 | 1
-                                 |
-+----------------+       +-------------------+
-|     Task       |       |  dailySchedule    |
-+----------------+       +-------------------+
-| - name         |       | - schedule[][]    |
-| - duration     |       | - taskCategories  |
-| - importance   |       +-------------------+
-| - category     |       | + addTaskAt()     |
-| - isCompleted  |       | + removeTaskAt()  |
-+----------------+       | + getTaskAt()     |
-| + getName()    |       | + addCategory()   |
-| + getDuration()|       | + getTaskCategories()|
-| + getImportance|       | + getTotalTime()  |
-| + getCategory()|       +-------------------+
-| + isCompleted()|
-| + markComplete()|
-+----------------+
-
-+----------------+
-| taskCategory   |
-+----------------+
-| - categoryName |
-| - taskGrid[][] |
-| - tasks        |
-+----------------+
-| + getCategoryName()|
-| + addTaskAt()  |
-| + addTask()    |
-| + removeTask() |
-| + getTasks()   |
-| + getTotalTime()|
-+----------------+
-```
+![
+  
+](image-1.png)
 
 This diagram shows the relationships between the classes in the Task Planner application.
 - ✅ A program that runs and works
